@@ -19,4 +19,14 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CountServlet</display-name>
+    <servlet-name>CountServlet</servlet-name>
+    <servlet-class>com.qicangqiu.servlet.CountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CountServlet</servlet-name>
+    <url-pattern>/CountServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

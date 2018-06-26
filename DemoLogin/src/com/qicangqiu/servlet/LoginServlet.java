@@ -17,7 +17,16 @@ public class LoginServlet extends HttpServlet {
 		System.out.print(userName + "   " + password);
 		PrintWriter pw = response.getWriter();
 		if ("admin".equals(userName) && "123".equals(password)) {
-			pw.write("login success...");
+//			pw.write("login success...");
+			Object obj = getServletContext().getAttribute("count");
+			int totalCount = 0;
+			if (obj != null) {
+				totalCount = (int) obj;
+			}
+			System.out.println("the number of successful logins: " + totalCount);
+			getServletContext().setAttribute("count", ++totalCount);
+			response.setStatus(302);
+			response.setHeader("Location", "login_success.html");
 		} else {
 			pw.write("login fail...");
 		}
